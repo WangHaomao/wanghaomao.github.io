@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Java的简单大数加法(A + B Problem II)及java环境的配置 - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Java的简单大数加法(A + B Problem II)及java环境的配置
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2015-08-05 11:34:22</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#ACM&amp;OJ" title="ACM&amp;OJ">ACM&amp;OJ</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>最近讲到高精度专题了，于是果断想到了用Java，虽然以前没接触过Java，还是被它的方便性吸引了，下个JDK和eclipsean安装完再配置一下Java环境就可以了，下面稍微提一下环境配置吧（我搞了好久，不过网上好多教程）</p>
+<p>桌面右键我的电脑（计算机）–&gt;属性–&gt;高级系统设置–&gt;（高级中的）环境变量:</p>
+<p>在系统变量里面最后要出现这三个变量（有就改一下变量值，没有就新建）<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">变量名</span><br><span class="line">变量值</span><br><span class="line">JAVA_HOME </span><br><span class="line">Java的安装路径，要求安装JDK的时候的路径（我的是G :\ JAVA \JDK）</span><br><span class="line"></span><br><span class="line">PATH</span><br><span class="line">%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</span><br><span class="line"></span><br><span class="line">CLASSPATH</span><br><span class="line">.;%JAVA_HOME%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%JAVA_HOME%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span></span><br><span class="line"> （直接复制就好了）</span><br></pre></td></tr></table></figure></p>
+<p>接下来看一道题<br><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1002</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;    </span><br><span class="line"><span class="keyword">import</span> java.math.*;    </span><br><span class="line"><span class="keyword">import</span> java.util.*;    </span><br><span class="line"><span class="keyword">import</span> java.text.*;   </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        Scanner cin = <span class="keyword">new</span> Scanner (<span class="keyword">new</span> BufferedInputStream(System.in));  </span><br><span class="line">        <span class="keyword">int</span> times=<span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">int</span> T;  </span><br><span class="line">        T=cin.nextInt();  </span><br><span class="line">        <span class="keyword">while</span>(T!=<span class="number">0</span>)  </span><br><span class="line">        &#123;  </span><br><span class="line">            BigInteger a;  </span><br><span class="line">            BigInteger b;  </span><br><span class="line">            a=cin.nextBigInteger();  </span><br><span class="line">            b=cin.nextBigInteger();  </span><br><span class="line">            System.out.println(<span class="string">"Case "</span>+ (times++)+<span class="string">":"</span>);  </span><br><span class="line">            System.out.println(a + <span class="string">" + "</span> + b + <span class="string">" = "</span> + a.add(b));  </span><br><span class="line">            <span class="keyword">if</span>(T!=<span class="number">1</span>) System.out.println(<span class="string">""</span>);  </span><br><span class="line">            T--;  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> //这里各个<span class="title">OJ</span>默认的不同,此处只能用<span class="title">Main</span></span></span><br></pre></td></tr></table></figure>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

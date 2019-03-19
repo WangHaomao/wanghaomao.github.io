@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        C++STL二分查找函数集及补充 - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        C++STL二分查找函数集及补充
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2015-08-04 20:53:39</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>C++中还是有许多我未了解或者不常用的函数，比如今天写下的一些二分函数，还是挺有用的，不仅仅可以减少代码量，而且能够增加时间的利用率。（目前我只学了简单的数组查找，有待补充）</p>
+<p>大概有以下几个STL中的二分查找函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">binary_search(a,a+n,key)    <span class="comment">//返回是否存在值bool型的  </span></span><br><span class="line">lower_bound(a,a+n,key)      <span class="comment">//下面两个都是指针型的  </span></span><br><span class="line">upper_bound(a,a+n,key)  </span><br><span class="line"><span class="comment">/*升序排列的容器： </span></span><br><span class="line"><span class="comment">lower_bound( const key_type &amp;key ): 返回一个迭代器，指向键值&gt;= key的第一个元素。 </span></span><br><span class="line"><span class="comment">upper_bound( const key_type &amp;key ): 返回一个迭代器，指向键值&gt;key的第一个元素。 </span></span><br><span class="line"><span class="comment">//降序排列的容器： </span></span><br><span class="line"><span class="comment">lower_bound( const key_type &amp;key ): 返回一个迭代器，指向键值&lt;= key的第一个元素。 </span></span><br><span class="line"><span class="comment">upper_bound( const key_type &amp;key ):返回一个迭代器，指向键值&lt;key的第一个元素。 </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>以下介绍一下手工写的二分函数，也可以改成系STL的函数：<br>一、判断是否存在key值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n, <span class="keyword">int</span> target)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>, high = n<span class="number">-1</span>;  </span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">int</span> mid = low+((high-low)&gt;&gt;<span class="number">1</span>);  </span><br><span class="line">        <span class="keyword">if</span>(A[mid] == target)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &lt; target)  </span><br><span class="line">            low = mid+<span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">else</span>  </span><br><span class="line">            high = mid<span class="number">-1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二、存在相同key值时查找最先出现的位置：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//此函数返回的是第几个元素，非数组下标  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lower_search</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n, <span class="keyword">int</span> target)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>, high = n<span class="number">-1</span>;  </span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">int</span> mid = low+((high-low)&gt;&gt;<span class="number">1</span>);  </span><br><span class="line">        <span class="keyword">if</span>(A[mid] == target)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="keyword">if</span>(mid &gt; <span class="number">0</span> &amp;&amp; A[mid<span class="number">-1</span>] == target)  </span><br><span class="line">                high = mid<span class="number">-1</span>;  </span><br><span class="line">            <span class="keyword">else</span>  </span><br><span class="line">                <span class="keyword">return</span> mid;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &lt; target)  </span><br><span class="line">            low = mid+<span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">else</span>  </span><br><span class="line">            high = mid<span class="number">-1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> -(low+<span class="number">1</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>三、存在相同元素的时候，返回最后出现的位置：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[cpp] view plain copy</span><br><span class="line"><span class="comment">//此函数返回的是第几个元素，非数组下标  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">upper_search</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n, <span class="keyword">int</span> target)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>, high = n<span class="number">-1</span>;  </span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">int</span> mid = low+((high-low)&gt;&gt;<span class="number">1</span>);  </span><br><span class="line">        <span class="keyword">if</span>(A[mid] == target)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="keyword">if</span>(mid &lt; n<span class="number">-1</span> &amp;&amp; A[mid+<span class="number">1</span>] == target)  </span><br><span class="line">                low = mid+<span class="number">1</span>;  </span><br><span class="line">            <span class="keyword">else</span>  </span><br><span class="line">                <span class="keyword">return</span> mid;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &lt; target)  </span><br><span class="line">            low = mid+<span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">else</span>  </span><br><span class="line">            high = mid<span class="number">-1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> -(low+<span class="number">1</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三、存在多个key值时，返回位置差：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">equal_search</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n, <span class="keyword">int</span> target)</span></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> tmp = upper_search(A, n, target)-lower_search(A, n, target);  </span><br><span class="line">    <span class="keyword">return</span> tmp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

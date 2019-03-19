@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Priority Queue Implementation - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Priority Queue Implementation
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-03-18 22:58:40</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#C++" title="C++">C++</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>In this page, I create a class Binary Heap to implement priority queue in C++ and Python. The data structure is same in both programing language as below,</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* vector(list in python) to store data</span><br><span class="line">* if i is current node:</span><br><span class="line">* 2*i + 1 is the first child, and 2 * i + 2 is right child</span><br><span class="line">* (i - 1) / 2 is the father node</span><br></pre></td></tr></table></figure>
+<p>In C++, I impment compare function(amp) to maintain priority of the heap. we also can provide self-define  compare function(amp).</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> * vector to store data</span></span><br><span class="line"><span class="comment"> * if i is current node:</span></span><br><span class="line"><span class="comment"> * 2*i + 1 is the first child, and 2 * i + 2 is right child</span></span><br><span class="line"><span class="comment"> * (i - 1) / 2 is the father node</span></span><br><span class="line"><span class="comment"> ***/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> ul;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">BinaryHeap</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinaryHeap();</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">BinaryHeap</span><span class="params">(<span class="built_in">vector</span>&lt;T&gt;)</span></span>;</span><br><span class="line">    explicit BinaryHeap(bool (*cmp)(const T&amp;, const T&amp;));</span><br><span class="line">    explicit BinaryHeap(vector&lt;T&gt;,bool (*cmp)(const T&amp;, const T&amp;));</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(T ele)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show_queue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(T x : elements)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T <span class="title">pop_top</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;T&gt; elements;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> heap_size;</span><br><span class="line">    <span class="keyword">bool</span> (*cmp)(T ele_a, T ele_b);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shift_up</span><span class="params">(T, ul)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shift_down</span><span class="params">(T, ul)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">build_heap</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">default_cmp</span><span class="params">(T ele_a, T ele_b)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinaryHeap</span>&lt;T&gt;:</span>:BinaryHeap() &#123;</span><br><span class="line">    heap_size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>-&gt;cmp = default_cmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinaryHeap</span>&lt;T&gt;:</span>:BinaryHeap(<span class="keyword">bool</span> (*cmp)(<span class="keyword">const</span> T&amp;, <span class="keyword">const</span> T&amp;)) &#123;</span><br><span class="line">    heap_size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>-&gt;cmp = cmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinaryHeap</span>&lt;T&gt;:</span>:BinaryHeap(<span class="built_in">vector</span>&lt;T&gt; eles):elements(move(eles)) &#123;</span><br><span class="line">    heap_size = elements.size();</span><br><span class="line">    <span class="keyword">this</span>-&gt;cmp = default_cmp;</span><br><span class="line">    build_heap();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinaryHeap</span>&lt;T&gt;:</span>:BinaryHeap(<span class="built_in">vector</span>&lt;T&gt; eles, <span class="keyword">bool</span> (*cmp)(<span class="keyword">const</span> T&amp;, <span class="keyword">const</span> T&amp;)):elements(move(eles))&#123;</span><br><span class="line">    heap_size = elements.size();</span><br><span class="line">    build_heap();</span><br><span class="line">    <span class="keyword">this</span>-&gt;cmp = cmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:insert(T ele) &#123;</span><br><span class="line">    elements.push_back(ele);</span><br><span class="line">    heap_size++;</span><br><span class="line"></span><br><span class="line">    shift_up(ele,heap_size<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:pop_top() &#123;</span><br><span class="line">    <span class="keyword">if</span>(heap_size &lt;= <span class="number">0</span>) <span class="keyword">throw</span> exception();</span><br><span class="line"></span><br><span class="line">    T leave = elements[--heap_size];</span><br><span class="line">    T top = elements[<span class="number">0</span>];</span><br><span class="line">    elements.pop_back();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(heap_size &gt; <span class="number">1</span>)</span><br><span class="line">        shift_down(leave,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:empty() &#123;</span><br><span class="line">    <span class="keyword">return</span> heap_size == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:build_heap() &#123;</span><br><span class="line">    <span class="keyword">if</span>(heap_size == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> _first_not_leave = (heap_size - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(ul i = _first_not_leave; i &gt;= <span class="number">0</span>;i--)&#123;</span><br><span class="line">        shift_down(elements[i],i);</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>) <span class="keyword">break</span>; <span class="comment">// necessary because unsigned long won't reach -1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:default_cmp(T ele_a, T ele_b) &#123;</span><br><span class="line">    <span class="keyword">return</span> ele_a &lt; ele_b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:shift_up(T ele, ul pos) &#123;</span><br><span class="line">    ul i = pos,j = (pos - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &gt; <span class="number">0</span> <span class="keyword">and</span> cmp(ele,elements[j]))&#123;</span><br><span class="line">        elements[i] = elements[j];</span><br><span class="line">        i = j;j = (i - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    elements[i] = ele;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinaryHeap</span>&lt;T&gt;:</span>:shift_down(T ele, ul pos) &#123;</span><br><span class="line">    ul i = pos, j = pos * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &lt; heap_size)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j+<span class="number">1</span> &lt; heap_size &amp;&amp; cmp(elements[j+<span class="number">1</span>],elements[j])) j = j+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(cmp(ele,elements[j])) <span class="keyword">break</span>;</span><br><span class="line">        elements[i] = elements[j];</span><br><span class="line">        i = j; j = i*<span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    elements[i] = ele;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v&#123;<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">auto</span> *hp = <span class="keyword">new</span> BinaryHeap&lt;<span class="keyword">int</span>&gt;(v);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!hp-&gt;empty())&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; hp-&gt;pop_top() &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The Python version is relatively poor than the previous one. I will enhance it in the future.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># utf-8</span></span><br><span class="line"><span class="comment"># coding in python 3.6</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PriortyQue</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    # README</span></span><br><span class="line"><span class="string">    # 使用list存储二叉树</span></span><br><span class="line"><span class="string">    # 大根堆，最大元素在顶端（弹出最大元素）,注释部分为维护小根堆</span></span><br><span class="line"><span class="string">    # i结点的父结点位置为(i-1)//2，i结点的左右子结点位置为2*i+1和2*i+2</span></span><br><span class="line"><span class="string">    # 叶子节点 length//2 - 1</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, elements)</span>:</span></span><br><span class="line">        <span class="comment"># 用列表存储树结构</span></span><br><span class="line">        self.elements = list(elements)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 构建树</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.empty():</span><br><span class="line">            leng = len(self.elements)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(leng // <span class="number">2</span> - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">                print(i, leng)</span><br><span class="line">                self.arrangeDown(self.elements[i], i, leng)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span> <span class="keyword">if</span> self.elements == [] <span class="keyword">else</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加元素</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, ele)</span>:</span></span><br><span class="line">        self.elements.append(ele)</span><br><span class="line">        self.arrangeUp(ele, len(self.elements) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 推出元素</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            print(<span class="string">"Empty Error"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> len(self.elements) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> self.elements.pop()</span><br><span class="line"></span><br><span class="line">        cp_elements = self.elements</span><br><span class="line">        root = self.elements[<span class="number">0</span>]</span><br><span class="line">        ele = cp_elements.pop()</span><br><span class="line">        <span class="keyword">if</span> cp_elements <span class="keyword">is</span> <span class="keyword">not</span> []:</span><br><span class="line">            self.arrangeDown(ele, <span class="number">0</span>, len(cp_elements))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    维护大根堆</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">arrangeDown</span><span class="params">(self, ele, begin, end)</span>:</span></span><br><span class="line"></span><br><span class="line">        cp_elements = self.elements</span><br><span class="line">        i = begin</span><br><span class="line">        j = begin * <span class="number">2</span> + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> j &lt; end:</span><br><span class="line">            <span class="comment"># 当前元素已经为三个元素中的最大值</span></span><br><span class="line">            <span class="keyword">if</span> j + <span class="number">1</span> &lt; end <span class="keyword">and</span> ele &gt; max(cp_elements[j], cp_elements[j + <span class="number">1</span>]):</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> j + <span class="number">1</span> &lt; end <span class="keyword">and</span> cp_elements[j] &lt; cp_elements[j + <span class="number">1</span>]:</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            cp_elements[i] = cp_elements[j]</span><br><span class="line">            i = j</span><br><span class="line">            j = i * <span class="number">2</span> + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        cp_elements[i] = ele</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">arrangeUp</span><span class="params">(self, ele, last)</span>:</span></span><br><span class="line">        cp_elements = self.elements</span><br><span class="line">        i = last</span><br><span class="line">        j = (last - <span class="number">1</span>) // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> ele &gt; cp_elements[j]:</span><br><span class="line">            cp_elements[i] = cp_elements[j]</span><br><span class="line">            i = j</span><br><span class="line">            j = (i - <span class="number">1</span>) // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        cp_elements[i] = ele</span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Data test</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    priorityQue = PriortyQue([<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>])</span><br><span class="line">    <span class="comment"># priorityQue = PriortyQue([1])</span></span><br><span class="line">    print(priorityQue.elements)</span><br><span class="line">    print(priorityQue.pop())</span><br><span class="line">    print(priorityQue.elements)</span><br><span class="line">    priorityQue.push(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> priorityQue.empty():</span><br><span class="line">        print(priorityQue.pop(), end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

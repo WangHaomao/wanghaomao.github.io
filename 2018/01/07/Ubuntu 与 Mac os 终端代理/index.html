@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Ubuntu 与 Mac os 终端代理 - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu"><span class="toc-text">Ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、下载安装"><span class="toc-text">1、下载安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、完善配置文件"><span class="toc-text">2、完善配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、测试与使用"><span class="toc-text">3、测试与使用</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-os"><span class="toc-text">Mac os</span></a></li>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Ubuntu 与 Mac os 终端代理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-01-07 15:41:44</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Experence" title="Experence">Experence</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>主要使用SS(shadowsocks)做代理，在Ubuntu和大多数Linux中可以安装SS-qt图形化界面使用，当然使用 Python 脚本的 SS也是比较方便的; 在Mac os中，SS也可以在互联网上下载。使用其他方式对系统代理后，以下终端代理方法仍适用</p>
+<p>注：SS的安装此处不提及，请访问其他相关页面</p>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>在Ubuntu中，推荐使用 proxychains<br>安装比较简单，同时速度也不错，配置也相对简单，以下是安装使用过程：</p>
+<p>proxychains 仓库地址： <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">https://github.com/rofl0r/proxychains-ng</a><br>详细配置与安装上述网站中有提及，如下</p>
+<h4 id="1、下载安装"><a href="#1、下载安装" class="headerlink" title="1、下载安装"></a>1、下载安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/rofl0r/proxychains-ng.git</span><br><span class="line">$ <span class="built_in">cd</span> proxychains-ng</span><br><span class="line"><span class="comment">#以下命令需要GCC环境，仓库地址中有提及</span></span><br><span class="line"><span class="comment">#needs a working C compiler, preferably gcc</span></span><br><span class="line">$ sudo make install </span><br><span class="line">$ sudo make install-config (installs proxychains.conf)</span><br></pre></td></tr></table></figure>
+<h4 id="2、完善配置文件"><a href="#2、完善配置文件" class="headerlink" title="2、完善配置文件"></a>2、完善配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/proxychains.conf</span><br><span class="line"><span class="comment">#找到[ProxyList] 后，添加代理信息，SS使用socks5，如果用http代理可使用http</span></span><br><span class="line">socks5  127.0.0.1 1080</span><br></pre></td></tr></table></figure>
+<h4 id="3、测试与使用"><a href="#3、测试与使用" class="headerlink" title="3、测试与使用"></a>3、测试与使用</h4><p>可以使用wget 测试 google.com 页面<br>proxychains 的用法是在需要使用的命令前加 proxychains4 ，例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ proxychains4 wget google.com</span><br><span class="line">$ sudo proxychains4 [your shell]</span><br></pre></td></tr></table></figure>
+<h2 id="Mac-os"><a href="#Mac-os" class="headerlink" title="Mac os"></a>Mac os</h2>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

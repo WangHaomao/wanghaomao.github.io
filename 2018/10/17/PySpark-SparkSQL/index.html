@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        PySpark-SparkSQL - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-review"><span class="toc-text">SQL review</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SparkSQL"><span class="toc-text">SparkSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Initialization"><span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SparkSQL-Dataframe-Operations"><span class="toc-text">SparkSQL(Dataframe) Operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tutorials"><span class="toc-text">Tutorials</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bugs-amp-Errors"><span class="toc-text">Bugs &amp; Errors</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        PySpark-SparkSQL
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-10-17 19:10:09</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#PySpark" title="PySpark">PySpark</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>The first time to touch with Spark in <strong>MS 5003 Big Data Computing</strong> in HKUST, and this is an article for recording SparkSQL experence or tutorials. I will add SparkRDD and Spark ML in later articles.</p>
+<h2 id="SQL-review"><a href="#SQL-review" class="headerlink" title="SQL review"></a>SQL review</h2><p>Add later..</p>
+<h2 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h2><h4 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h4><p><strong>basic import &amp; Initialization</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># row</span></span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> Row</span><br><span class="line"></span><br><span class="line">row = Row(name=<span class="string">"Alice"</span>, age=<span class="number">11</span>)</span><br><span class="line"><span class="keyword">print</span> row[<span class="string">'name'</span>], row[<span class="string">'age'</span>]</span><br><span class="line"><span class="keyword">print</span> row.name, row.age</span><br><span class="line">row = Row(name=<span class="string">"Alice"</span>, age=<span class="number">11</span>, count=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> row.count <span class="comment">#&lt;built-in method count of Row object at 0x10d446b30&gt;</span></span><br><span class="line"><span class="keyword">print</span> row[<span class="string">'count'</span>] <span class="comment">#1, recommended</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SparkSession,pyspark.sql.SparkSession(sparkContext, jsparkSession=None)</span></span><br><span class="line"><span class="comment"># inherit sparkContext</span></span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> SparkSession</span><br><span class="line"><span class="comment"># initial set up a SparkSession</span></span><br><span class="line">spark = SparkSession.builder\</span><br><span class="line">        .appName(<span class="string">"Python Spark SQL basic example"</span>)\</span><br><span class="line">        .config(<span class="string">"spark.some.config.option"</span>, <span class="string">"some-value"</span>)\</span><br><span class="line">        .getOrCreate()</span><br><span class="line"> </span><br><span class="line">df = spark.read.csv(<span class="string">'../data/building.csv'</span>, header=<span class="keyword">True</span>, inferSchema=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment"># also can read text, etc</span></span><br><span class="line">lines = spark.read.text(<span class="string">'../data/adj_noun_pairs.txt'</span>)</span><br><span class="line">df.printSchema()</span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">root</span><br><span class="line"> |-- BuildingID: integer (nullable = true)</span><br><span class="line"> |-- BuildingMgr: string (nullable = true)</span><br><span class="line"> |-- BuildingAge: integer (nullable = true)</span><br><span class="line"> |-- HVACproduct: string (nullable = true)</span><br><span class="line"> |-- Country: string (nullable = true)</span><br><span class="line"><span class="comment"># Create an RDD from the dataframe</span></span><br><span class="line">dfrdd = df.rdd</span><br><span class="line"><span class="comment"># dfrdd.take(3)</span></span><br><span class="line">dfrdd.take(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function</span></span><br><span class="line"><span class="keyword">from</span> pyspark.sql.functions <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<h4 id="SparkSQL-Dataframe-Operations"><a href="#SparkSQL-Dataframe-Operations" class="headerlink" title="SparkSQL(Dataframe) Operations"></a>SparkSQL(Dataframe) Operations</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># table example</span></span><br><span class="line">root</span><br><span class="line"> |-- BuildingID: integer (nullable = true)</span><br><span class="line"> |-- BuildingMgr: string (nullable = true)</span><br><span class="line"> |-- BuildingAge: integer (nullable = true)</span><br><span class="line"> |-- HVACproduct: string (nullable = true)</span><br><span class="line"> |-- Country: string (nullable = true)</span><br></pre></td></tr></table></figure>
+<p><strong>Select</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># spark are defined before.</span></span><br><span class="line">df = spark.read.csv(<span class="string">'data.csv'</span>)</span><br><span class="line"><span class="comment"># select columns</span></span><br><span class="line">df.select(<span class="string">'BuildingID'</span>, <span class="string">'Country'</span>)</span><br><span class="line">df.select(<span class="string">'HVACproduct'</span>)</span><br><span class="line"><span class="comment"># select column and rename</span></span><br><span class="line">df.select(col(<span class="string">'Country'</span>).alias(<span class="string">'myCounrty'</span>))</span><br><span class="line"><span class="comment"># select calculated columns</span></span><br><span class="line">df.select((col(<span class="string">'BuildingID'</span>) * col(<span class="string">'BuildingAge'</span>)).alias(<span class="string">'newColumn'</span>))</span><br><span class="line">df.select(log(col(<span class="string">'BuildingID'</span>) * col(<span class="string">'BuildingAge'</span>))) <span class="comment"># free to use python script here</span></span><br><span class="line"><span class="comment"># e.g. another example</span></span><br><span class="line">pairs = words.select(words[<span class="string">'w'</span>][<span class="number">0</span>].alias(<span class="string">'adj'</span>), words[<span class="string">'w'</span>][<span class="number">1</span>].alias(<span class="string">'noun'</span>))</span><br><span class="line"><span class="comment"># select with where/filter</span></span><br><span class="line">df.where(<span class="string">"Country = 'Finland'"</span>).select(<span class="string">'*'</span>)</span><br><span class="line">df.where(<span class="string">"Country like 'F%'"</span>).select(<span class="string">'*'</span>, lit(<span class="string">'OK'</span>)) <span class="comment"># pyspark.sql.functions.lit(col) -- Creates a Column of literal value.</span></span><br></pre></td></tr></table></figure>
+<p><strong>GroupBy &amp; Aggregation</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for each country, count the number.</span></span><br><span class="line">df.groupBy(<span class="string">'Country'</span>).count()</span><br><span class="line"><span class="comment"># for each country, find the total Price.</span></span><br><span class="line"><span class="comment"># same as rdd.map(lambda Country:(Country,Price)).reduceByKey(lambda:f1,f2:f1+f2)</span></span><br><span class="line">df.groupBy(<span class="string">'Country'</span>).sum(<span class="string">'Price'</span>)</span><br><span class="line"><span class="comment"># orderBy</span></span><br><span class="line">df.groupBy(<span class="string">'Country'</span>).sum(<span class="string">'Price'</span>).orderBy()</span><br><span class="line">df.groupBy(<span class="string">'Country'</span>).sum(<span class="string">'Price'</span>).orderBy(desc(<span class="string">'sum(Price)'</span>)) <span class="comment"># descrising</span></span><br></pre></td></tr></table></figure>
+<h4 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h4><p><strong>PageRank</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#data example</span></span><br><span class="line">pagerank_data.txt</span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line">links.show()</span><br><span class="line">+---+---+</span><br><span class="line">|src|dst|</span><br><span class="line">+---+---+</span><br><span class="line">|  <span class="number">1</span>|  <span class="number">2</span>|</span><br><span class="line">|  <span class="number">1</span>|  <span class="number">3</span>|</span><br><span class="line">|  <span class="number">2</span>|  <span class="number">3</span>|</span><br><span class="line">|  <span class="number">3</span>|  <span class="number">4</span>|</span><br><span class="line">|  <span class="number">4</span>|  <span class="number">1</span>|</span><br><span class="line">|  <span class="number">2</span>|  <span class="number">1</span>|</span><br><span class="line">+---+---+</span><br><span class="line">ranks.show()</span><br><span class="line">+---+----+</span><br><span class="line">|src|rank|</span><br><span class="line">+---+----+</span><br><span class="line">|  <span class="number">3</span>|   <span class="number">1</span>|</span><br><span class="line">|  <span class="number">1</span>|   <span class="number">1</span>|</span><br><span class="line">|  <span class="number">4</span>|   <span class="number">1</span>|</span><br><span class="line">|  <span class="number">2</span>|   <span class="number">1</span>|</span><br><span class="line">+---+----+</span><br><span class="line">outdegrees.show()</span><br><span class="line">+---+-----+</span><br><span class="line">|src|count|</span><br><span class="line">+---+-----+</span><br><span class="line">|  <span class="number">3</span>|    <span class="number">1</span>|</span><br><span class="line">|  <span class="number">1</span>|    <span class="number">2</span>|</span><br><span class="line">|  <span class="number">4</span>|    <span class="number">1</span>|</span><br><span class="line">|  <span class="number">2</span>|    <span class="number">2</span>|</span><br><span class="line">+---+-----+</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql.functions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> SparkSession</span><br><span class="line">spark = SparkSession.builder\</span><br><span class="line">        .appName(<span class="string">"Python Spark SQL basic example"</span>)\</span><br><span class="line">        .config(<span class="string">"spark.some.config.option"</span>, <span class="string">"some-value"</span>)\</span><br><span class="line">        .getOrCreate()</span><br><span class="line"></span><br><span class="line">numOfIterations = <span class="number">10</span></span><br><span class="line">lines = spark.read.text(<span class="string">"pagerank_data.txt"</span>)</span><br><span class="line"><span class="comment"># You can also test your program on the follow larger data set:</span></span><br><span class="line"><span class="comment"># lines = spark.read.text("dblp.in")</span></span><br><span class="line"></span><br><span class="line">a = lines.select(split(lines[<span class="number">0</span>],<span class="string">' '</span>))</span><br><span class="line">links = a.select(a[<span class="number">0</span>][<span class="number">0</span>].alias(<span class="string">'src'</span>), a[<span class="number">0</span>][<span class="number">1</span>].alias(<span class="string">'dst'</span>))</span><br><span class="line">outdegrees = links.groupBy(<span class="string">'src'</span>).count()</span><br><span class="line">ranks = outdegrees.select(<span class="string">'src'</span>, lit(<span class="number">1</span>).alias(<span class="string">'rank'</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> iteration <span class="keyword">in</span> range(numOfIterations):</span><br><span class="line">    <span class="comment"># FILL IN THIS PART</span></span><br><span class="line">    <span class="comment"># PR(u) = part1 + part2</span></span><br><span class="line">    <span class="comment"># PR(u) = 0.15 + 0.85 * sum(all(PR(v)/outdegrees(v))), v -&gt; u</span></span><br><span class="line">    contributors = links.join(ranks,<span class="string">'src'</span>)\</span><br><span class="line">                        .join(outdegrees,<span class="string">'src'</span>)\</span><br><span class="line">                        .select(<span class="string">'dst'</span>,(col(<span class="string">'rank'</span>)/col(<span class="string">'count'</span>))\</span><br><span class="line">                        .alias(<span class="string">'partition'</span>))</span><br><span class="line">    </span><br><span class="line">    contributors = contributors.withColumnRenamed(<span class="string">'dst'</span>, <span class="string">'dst1'</span>)\</span><br><span class="line">                               .groupBy(<span class="string">'dst1'</span>)\</span><br><span class="line">                               .sum(<span class="string">'partition'</span>)</span><br><span class="line">    </span><br><span class="line">    ranks = contributors.select(col(<span class="string">'dst1'</span>).alias(<span class="string">'src'</span>),round(<span class="number">0.15</span>+<span class="number">0.85</span>*col(<span class="string">'sum(partition)'</span>),<span class="number">3</span>).alias(<span class="string">'rank'</span>))</span><br><span class="line">  </span><br><span class="line">ranks.orderBy(desc(<span class="string">'rank'</span>)).show()</span><br></pre></td></tr></table></figure>
+<p><strong>PMI</strong></p>
+<h4 id="Bugs-amp-Errors"><a href="#Bugs-amp-Errors" class="headerlink" title="Bugs &amp; Errors"></a>Bugs &amp; Errors</h4><p>Note: There is a bug in the current SparkSQL implementation: The groupBy (followed by some aggregation) method sometimes fails to group all rows with the same key.  A temporary workaround is the following:</p>
+<p>Suppose you want to do</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.groupBy(<span class="string">'A'</span>).sum(<span class="string">'B'</span>)</span><br></pre></td></tr></table></figure>
+<p>If it fails to produce the desired result, try</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.withColumnRenamed(<span class="string">'A'</span>, <span class="string">'A1'</span>).groupBy(<span class="string">'A1'</span>).sum(<span class="string">'B'</span>)</span><br></pre></td></tr></table></figure>
+<p>The professor reported this bug to the Spark developers and the issue is currently under investigation:</p>
+<p><a href="https://issues.apache.org/jira/browse/SPARK-20169" target="_blank" rel="noopener">https://issues.apache.org/jira/browse/SPARK-20169</a> </p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

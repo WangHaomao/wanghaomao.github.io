@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Python-Packages Recorders - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Python-Packages Recorders
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-10-16 09:56:13</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p> Write down some useful python tools or packages used in works and projects.</p>
+<p>###Country/Region &amp; Currency Related</p>
+<p><strong>Locale to Currency name</strong></p>
+<p><a href="http://babel.pocoo.org/en/latest/" target="_blank" rel="noopener">Babel</a> and locale</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e.g. zh_CN--&gt; RNY, zh_HK --&gt; Hong Kong Dollar</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_currency</span><span class="params">(loc)</span>:</span></span><br><span class="line">    locale.setlocale(locale.LC_ALL, loc)</span><br><span class="line">    sym = locale.localeconv()[<span class="string">'int_curr_symbol'</span>]</span><br><span class="line">    <span class="comment"># print(babel.numbers.format_currency(1099.98,sym))</span></span><br><span class="line">    <span class="keyword">return</span> babel.numbers.get_currency_name(sym)</span><br><span class="line">    </span><br><span class="line">get_currency(<span class="string">'zh_HK'</span>)</span><br><span class="line">CNY</span><br><span class="line">get_currency(<span class="string">'en_US'</span>)</span><br><span class="line">Hong Kong Dollar</span><br><span class="line">get_currency(<span class="string">'zh_CN'</span>)</span><br><span class="line">USD</span><br></pre></td></tr></table></figure>
+<p><strong>Exchange Rate</strong> </p>
+<p>forex-python(<a href="https://pypi.org/project/forex-python/" target="_blank" rel="noopener">https://pypi.org/project/forex-python/</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Date time (Oct 16th, 2018)</span></span><br><span class="line"><span class="comment"># Data from https://ratesapi.io/api/</span></span><br><span class="line"><span class="keyword">from</span> forex_python.converter <span class="keyword">import</span> CurrencyRates</span><br><span class="line">c=CurrencyRates()</span><br><span class="line">c.get_rate(<span class="string">'HKD'</span>,<span class="string">'CNY'</span>)</span><br><span class="line"><span class="number">0.8829</span></span><br><span class="line"></span><br><span class="line">c.get_rates(<span class="string">'HKD'</span>)</span><br><span class="line">&#123;<span class="string">'AUD'</span>: <span class="number">0.1788</span>, <span class="string">'BGN'</span>: <span class="number">0.2155</span>, <span class="string">'BRL'</span>: <span class="number">0.4792</span>, <span class="string">'CAD'</span>: <span class="number">0.1662</span>, <span class="string">'CHF'</span>: <span class="number">0.1259</span>, <span class="string">'CNY'</span>: <span class="number">0.8829</span>, <span class="string">'CZK'</span>: <span class="number">2.8422</span>, <span class="string">'DKK'</span>: <span class="number">0.822</span>, <span class="string">'EUR'</span>: <span class="number">0.1102</span>, <span class="string">'GBP'</span>: <span class="number">0.097</span>, <span class="string">'HRK'</span>: <span class="number">0.8168</span>, <span class="string">'HUF'</span>: <span class="number">35.6352</span>, <span class="string">'IDR'</span>: <span class="number">1940.6502</span>, <span class="string">'ILS'</span>: <span class="number">0.4628</span>, <span class="string">'INR'</span>: <span class="number">9.4168</span>, <span class="string">'ISK'</span>: <span class="number">14.8292</span>, <span class="string">'JPY'</span>: <span class="number">14.2706</span>, <span class="string">'KRW'</span>: <span class="number">144.0623</span>, <span class="string">'MXN'</span>: <span class="number">2.4039</span>, <span class="string">'MYR'</span>: <span class="number">0.5303</span>, <span class="string">'NOK'</span>: <span class="number">1.0422</span>, <span class="string">'NZD'</span>: <span class="number">0.1953</span>, <span class="string">'PHP'</span>: <span class="number">6.9022</span>, <span class="string">'PLN'</span>: <span class="number">0.4731</span>, <span class="string">'RON'</span>: <span class="number">0.5142</span>, <span class="string">'RUB'</span>: <span class="number">8.3647</span>, <span class="string">'SEK'</span>: <span class="number">1.1449</span>, <span class="string">'SGD'</span>: <span class="number">0.1757</span>, <span class="string">'THB'</span>: <span class="number">4.169</span>, <span class="string">'TRY'</span>: <span class="number">0.7366</span>, <span class="string">'USD'</span>: <span class="number">0.1276</span>, <span class="string">'ZAR'</span>: <span class="number">1.8413</span>&#125;</span><br></pre></td></tr></table></figure>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

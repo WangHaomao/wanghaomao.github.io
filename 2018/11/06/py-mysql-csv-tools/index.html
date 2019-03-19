@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="null">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        py-mysql-csv tools - null
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> enjoy everyday. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/images/favicon.ico">
+        </div>
+        <div class="name">
+            <i>WANG Haomao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-py-mysql"><span class="toc-text">Install py-mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect-with-Database"><span class="toc-text">Connect with Database</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Save-Write-to-CSV"><span class="toc-text">Save(Write) to CSV</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> enjoy everyday. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        py-mysql-csv tools
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-11-06 18:45:02</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>Now, I start to do my indenpendent project about house price prediction, the raw data are stored in mysql database, but most of time, I would like to use csv file to do machine learning practise. </p>
+<p>It’s really a long time to code without database, so I decide to write down those scripts, which are related about selecting sql and saving data  into csv file. Sometimes, especailly there are characters not in English like Chinese, we need to do encode/decode excutions. Let’s start with install py-mysql.</p>
+<h2 id="Install-py-mysql"><a href="#Install-py-mysql" class="headerlink" title="Install py-mysql"></a>Install py-mysql</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> py-mysql</span><br></pre></td></tr></table></figure>
+<p><a href="https://pypi.org/project/py-mysql/" target="_blank" rel="noopener">Document links here</a></p>
+<h2 id="Connect-with-Database"><a href="#Connect-with-Database" class="headerlink" title="Connect with Database"></a>Connect with Database</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"><span class="comment"># fill base info of my mysql database</span></span><br><span class="line">mydb = mysql.connector.connect(user=<span class="string">'username'</span>, 	</span><br><span class="line">                               password=<span class="string">'password'</span>,	</span><br><span class="line">                               host=<span class="string">'127.0.0.1'</span>,</span><br><span class="line">                               database=<span class="string">'databaseName'</span>)</span><br><span class="line">mycursor = mydb.cursor()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"SELECT * FROM Table_Name</span></span><br><span class="line"><span class="string">mycursor.execute(sql)</span></span><br><span class="line"><span class="string">myresult = mycursor.fetchall()</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://www.w3schools.com/python/python_mysql_getstarted.asp" target="_blank" rel="noopener">more dabase sql info here</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># columns name</span></span><br><span class="line">col_names = [i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> mycursor.description]</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> myresult:</span><br><span class="line">    print(row)</span><br></pre></td></tr></table></figure>
+<h2 id="Save-Write-to-CSV"><a href="#Save-Write-to-CSV" class="headerlink" title="Save(Write) to CSV"></a>Save(Write) to CSV</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># It works to me to write Chinese data to csv for unrecognizable code problem</span></span><br><span class="line"><span class="comment"># encoding='utf-8-sig'</span></span><br><span class="line">csv_train_file = open(<span class="string">'train.csv'</span>,<span class="string">'w'</span>, newline=<span class="string">''</span>,encoding=<span class="string">'utf-8-sig'</span>)</span><br><span class="line">writer = csv.writer(csv_train_file)</span><br><span class="line">writer.writerow(col_names)</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> myresult:</span><br><span class="line">    writer.writerow(list(row))</span><br><span class="line">csv_train_file.close()</span><br><span class="line">print(<span class="string">'finished..'</span>)</span><br></pre></td></tr></table></figure>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/WangHaomao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://github.com/wanghaomao">Haomao&#39;s Github</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
