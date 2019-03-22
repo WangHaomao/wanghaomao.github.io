@@ -11,7 +11,7 @@
 
     <title>
         
-        null
+        Apache Flink Notebook - null
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>HOME</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic"><span class="toc-text">Basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-Apache-Flink-will-used-Flink-bellow"><span class="toc-text">What is Apache Flink(will used Flink bellow)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Domain"><span class="toc-text">Domain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compare-with-Apache-Spark-Spark-Streaming"><span class="toc-text">Compare with Apache Spark(Spark Streaming)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,97 +115,100 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2015-07-22</div>
-        <div class="post-info">
-            <a href="/2015/07/22/两道基础线段树简解:HDU 1166，HDU 1754/">
-                <h3>
-                    两道基础线段树简解:HDU 1166，HDU 1754
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#ACM&amp;OJ" title="ACM&amp;OJ">ACM&amp;OJ</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        Apache Flink Notebook
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2015-07-21</div>
-        <div class="post-info">
-            <a href="/2015/07/21/ExtendGcd,即扩展欧几里得算法的C++模板化解释/">
-                <h3>
-                    ExtendGcd,即扩展欧几里得算法的C++模板化解释
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#ACM&amp;OJ" title="ACM&amp;OJ">ACM&amp;OJ</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-03-22 20:38:10</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Flink" title="Flink">Flink</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2015-07-20</div>
-        <div class="post-info">
-            <a href="/2015/07/20/[转载]KMP算法详解：简洁易懂的KMP算法/">
-                <h3>
-                    (转) KMP算法详解：简洁易懂的KMP算法
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#ACM&amp;OJ" title="ACM&amp;OJ">ACM&amp;OJ</a>
-                <span>/</span>
-                
-                
-            </p>
+    <div class="post-content ">
+        <p>Recently, I am learning the usage of Apache Flink. In this note, I would like to write down some notes of Flink and distributed computing. (this page is updating)</p>
+<h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><h3 id="What-is-Apache-Flink-will-used-Flink-bellow"><a href="#What-is-Apache-Flink-will-used-Flink-bellow" class="headerlink" title="What is Apache Flink(will used Flink bellow)"></a>What is Apache Flink(will used Flink bellow)</h3><p>Apache Flink is an open source <strong>stream processing framework</strong>, which is a <strong>distributed streaming dataflow engine</strong> written in Java and Scala.</p>
+<h3 id="Domain"><a href="#Domain" class="headerlink" title="Domain"></a>Domain</h3><p>Event-driven Applications【事件驱动】<br>Data Analytics Applications【数据分析】<br>Data Pipeline Applications【管道式ETL】</p>
+<h3 id="Compare-with-Apache-Spark-Spark-Streaming"><a href="#Compare-with-Apache-Spark-Spark-Streaming" class="headerlink" title="Compare with Apache Spark(Spark Streaming)"></a>Compare with Apache Spark(Spark Streaming)</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Micro-Batching</th>
+<th>Distributed Snapshots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implantation</td>
+<td>Apache Spark</td>
+<td>Apache Flink</td>
+</tr>
+<tr>
+<td>Semantics</td>
+<td>Exactly-Once (To process every message once and only once)</td>
+<td>Exactly-Once</td>
+</tr>
+<tr>
+<td>Delay</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Storm(吞吐)</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Computing Model</td>
+<td>Micro Batch</td>
+<td>Streaming</td>
+</tr>
+<tr>
+<td>Fault Tolerant</td>
+<td>Low</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Flow control</td>
+<td>Relatively Bad</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Business and Fault-tolerance</td>
+<td>Relatively Coupling</td>
+<td>Separation</td>
+</tr>
+<tr>
+<td></td>
+<td>Continuous data streams should not be split to the record level, but converged into a batch of micro-batch, atomic data for batch-like calculations.</td>
+<td>Determine the state of the current flow calculation (including the data being processed, and the Operator state), generate a consistent snapshot of the state, and store it in persistent storage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] 李飞 进阶教程-Flink大数据项目实战（上，下）</p>
+
+        
+        <br>
+        <div id="comment-container">
         </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2015-07-13</div>
-        <div class="post-info">
-            <a href="/2015/07/13/HDU 2181 哈密顿绕行世界问题/">
-                <h3>
-                    HDU 2181 哈密顿绕行世界问题
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#ACM&amp;OJ" title="ACM&amp;OJ">ACM&amp;OJ</a>
-                <span>/</span>
-                
-                
-            </p>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
         </div>
+
     </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page/3/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -253,7 +260,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
