@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#六大原则"><span class="toc-text">六大原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创见型模式"><span class="toc-text">创见型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结构型模式"><span class="toc-text">结构型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#装饰者模式"><span class="toc-text">装饰者模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行为型模式"><span class="toc-text">行为型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#六大原则"><span class="toc-text">六大原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创见型模式"><span class="toc-text">创见型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单工厂模式"><span class="toc-text">简单工厂模式</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#结构型模式"><span class="toc-text">结构型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#装饰者模式"><span class="toc-text">装饰者模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行为型模式"><span class="toc-text">行为型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li>
 </div>
     
 </div>
@@ -146,13 +146,14 @@
 <li><strong>接口隔离原则</strong>（Interface-segregation principles, ISP），指明客户应该不依赖于它不使用的方法。ISP拆分非常庞大臃肿的接口成为更小的和更具体的接口，这样客户将会只需要知道他们感兴趣的方法。</li>
 <li><strong>最少知识原则</strong>（又称迪米特法则，Law of demeter, LoD）很多面向对象程序设计语言用”.”表示对象的域的解析算符，因此得墨忒耳定律可以简单地陈述为“只使用一个.算符”。因此，a.b.Method()违反了此定律，而a.Method()不违反此定律。一个简单例子是，人可以命令一条狗行走（walk），但是不应该直接指挥狗的腿行走，应该由狗去指挥控制它的腿如何行走。（引用自<a href="https://zh.wikipedia.org/wiki/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B" target="_blank" rel="noopener">维基百科：得墨忒耳定律</a>）</li>
 </ul>
-<h2 id="创见型模式"><a href="#创见型模式" class="headerlink" title="创见型模式"></a>创见型模式</h2><h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h3><p>有两种方式可以实现给一个类或对象增加行为：</p>
+<h2 id="创见型模式"><a href="#创见型模式" class="headerlink" title="创见型模式"></a>创见型模式</h2><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><p>如何去实例化一个对象？这是一个在面向对象编程中常见的问题，而简单工厂模式使用一个统筹类（工厂类）去创建实例。客户告诉工厂需要生产哪个商品，工厂就会创建对应的对象。</p>
+<p><div align="center"><br><img src="/images/designPattern/SimpleFactory.jpg"><br></div><br>例：<a href="https://wanghaomao.github.io/2019/03/28/Simple-factory-pattern-with-Python/">简单工厂模式</a></p>
+<h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h3><p>有两种方式可以实现给一个类或对象增加行为：</p>
 <ul>
 <li>继承，通过继承一个现有类可以使得子类在拥有自身方法的同时还拥有父类的方法。但是这种方法是静态的，用户不能控制增加行为的方式和时机。</li>
-<li>关联，即将一个类的对象嵌入另一个对象中，由另一个对象来决定是否调用嵌入对象的行为以便扩展自己的行为，我们称这个嵌入的对象为装饰器(Decorator)</li>
+<li>关联，即将一个类的对象嵌入另一个对象中，由另一个对象来决定是否调用嵌入对象的行为以便扩展自己的行为，我们称这个嵌入的对象为装饰器(Decorator)<br><div align="center"><br><img src="/images/designPattern/SimpleFactory.jpg"><br></div><br>装饰模式以对客户透明的方式动态地给一个对象附加上更多的责任，换言之，客户端并不会觉得对象在装饰前和装饰后有什么不同。装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展。这就是装饰模式的模式动机。</li>
 </ul>
-<p>装饰模式以对客户透明的方式动态地给一个对象附加上更多的责任，换言之，客户端并不会觉得对象在装饰前和装饰后有什么不同。装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展。这就是装饰模式的模式动机。</p>
-<p>例子：<a href="https://wanghaomao.github.io/2019/03/25/Python-Decorator-and-Decorator-Pattern/">装饰模式简例</a></p>
+<p>例：<a href="https://wanghaomao.github.io/2019/03/25/Python-Decorator-and-Decorator-Pattern/">装饰模式简例</a></p>
 <h2 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h2><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>[1] 程杰 大话设计模式[M] 北京：清华大学出版社 2010</p>
 <p>[2] <a href="https://zh.wikipedia.org/" target="_blank" rel="noopener">https://zh.wikipedia.org</a></p>
 <p>[3] <a href="https://design-patterns.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">https://design-patterns.readthedocs.io/zh_CN/latest/</a></p>
